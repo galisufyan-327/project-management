@@ -1,0 +1,18 @@
+@import 'variables';
+
+.auth {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background: $light-gray;
+	form {
+		text-align: center;
+
+		min-width: 300px;
+	}
+}

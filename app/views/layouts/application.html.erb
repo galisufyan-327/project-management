@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if current_user.present? %>
+      <%= render 'layouts/topnav' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
