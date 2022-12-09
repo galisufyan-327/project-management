@@ -1,0 +1,44 @@
+<main class="form-wrapper">
+	<%= form_with model: @task, url: [@task.project, @task] do |form| %>
+		<h4>
+			<%= @task.id ? 'Update Task' : 'Create new Task' %>
+		</h4>
+
+		<% if @task.errors.present? %>
+			<ul>
+				<% @task.errors.each do |error| %>
+					<li><%= error.full_message %></li>
+				<% end %>
+			</ul>
+		<% end %>
+
+		<div class="form-group">
+			<%= form.label :title, 'Title' %>
+	  	<%= form.text_field :title, class: 'form-control' %>
+		</div>
+
+		<div class="form-group mt-2">
+			<%= form.label :description, 'Description' %>
+	  	<%= form.text_area :description, class: 'form-control' %>
+		</div>
+
+		<div class="form-group mt-2">
+			<%= form.label :status, 'Status' %>
+			<%= form.select :status, Task.statuses.keys, {}, class: 'form-select' %>
+		</div>
+
+		<div class="form-group mt-2">
+			<%= form.label :priority, 'Priority' %>
+			<%= form.select :priority, Task.priorities.keys, {}, class: 'form-select' %>
+		</div>
+
+		<div class="form-group mt-2">
+			<%= form.label :assigne_id, 'Assignee' %>
+			<%= form.select :assigne_id, User.all.map {|u| [u.name, u.id] }, { include_blank: true}, class: 'form-select' %>
+		</div>
+
+	  <%= form.submit 'Save', class: 'btn btn-primary mt-2' %>
+	  <%= link_to 'Cancel', url_for(:back), class: 'btn btn-outline-primary mt-2' %>
+	<% end %>
+	</section>
+</main>

@@ -3,7 +3,9 @@ class ProjectsController < ApplicationController
   before_action :set_user_projects
   before_action :set_project, except: [:index, :create, :new]
 
-  def index; end
+  def index
+    @assigned_projects = current_user.assigned_projects.includes(:user)
+  end
 
   def new
     @project = Project.new
@@ -53,7 +55,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = @projects.find_by(id: params[:id])
+    @project = current_user.all_projects.find_by(id: params[:id])
 
     redirect_back(fallback_location: projects_path, alert: 'Project not found') if @project.blank?
   end

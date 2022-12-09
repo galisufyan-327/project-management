@@ -1,18 +1,31 @@
 <main class="auth">
-	<%= form_with model: User, url: user_registration_path, method: :post do |form| %>
+	<%= form_with model: resource, url: user_registration_path, method: :post do |form| %>
 		<label>Project Management</label>
 
 		<h4 class="mt-2">Sign Up</h4>
 
-		<div class="form-floating">
-	  	<%= form.text_field :email, class: 'form-control' %>
-	  	<%= form.label :email, 'Email' %>
+		<div class="form-group">
+			<%= form.label :name, 'Name' %>
+	  	<%= form.text_field :name, class: 'form-control' %>
 		</div>
 
-		<div class="form-floating mt-2">
-	  	<%= form.password_field :password, class: 'form-control' %>
-	  	<%= form.label :password, 'Password' %>
+		<div class="form-group mt-2">
+			<%= form.label :email, 'Email' %>
+	  	<%= form.text_field :email, class: 'form-control' %>
 		</div>
+
+		<div class="form-group mt-2">
+			<%= form.label :password, 'Password' %>
+	  	<%= form.password_field :password, class: 'form-control' %>
+		</div>
+
+		<% if resource.errors.present? %>
+			<ul>
+				<% resource.errors.each do |error| %>
+					<li><%= error.full_message %></li>
+				<% end %>
+			</ul>
+		<% end %>
 
 	  <%= form.submit 'Sign Up', class: 'btn btn-primary mt-2' %>
 	<% end %>

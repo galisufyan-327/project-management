@@ -1,0 +1,28 @@
+<table>
+	<thead>
+		<th width="10%">Id#</th>
+		<th width="35%">Name</th>
+		<th width="25%">Assigned to</th>
+		<th width="30%" class="text-center">Actions</th>
+	</thead>
+
+	<tbody>
+		<% tasks.each do |task| %>
+			<tr>
+				<td><%= task.id %></td>
+				<td><%= task.title %></td>
+				<td><%= task.assigne&.name %></td>
+				<% if authorized_to_task? task %>
+					<td class="text-center">
+						<%= link_to 'Edit', edit_task_path(task), class: 'btn' %>
+						<%= link_to 'View', task_path(task), class: 'btn' %>
+					</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<% if tasks.blank? %>
+	<div class="table-empty-state">No record found</div>
+<% end %>

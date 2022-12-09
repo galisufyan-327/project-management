@@ -1,0 +1,12 @@
+.dashboard {
+	text-align: center;
+	padding: 4rem;
+
+	.actions {
+		display: flex;
+		gap: 1rem;
+		padding: 1rem;
+		align-items: center;
+		justify-content: center;
+	}
+}

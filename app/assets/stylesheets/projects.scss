@@ -1,29 +1,35 @@
+@import 'variables';
+
 .index {
 	display: flex;
 	gap: 2rem;
 	padding: 2rem 0;
 	section {
 		width: 50%;
+		border: 1px solid $border;
+		border-radius: 1rem;
+		padding: 1rem;
 		header {
 			width: 100%;
 			margin-bottom: 1rem;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			border-bottom: 1px solid $border;
+			height: 55px;
 		}
 		table {
 			width: 100%;
-			.text-right {
-				text-align: right;
-			}
+			td { height: 40px }
 		}
-	}
-}
-
-.show {
-	padding: 2rem 0;
-	&-actions {
-		display: flex;
-		gap: 1rem;
+		.table-empty-state {
+			padding: 1rem;
+			text-align: center;
+			opacity: 0.75;
+		}
+		.actions {
+			display: flex;
+			gap: 1rem;
+		}
 	}
 }

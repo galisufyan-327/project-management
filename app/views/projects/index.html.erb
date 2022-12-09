@@ -6,31 +6,14 @@
 			<%= link_to 'Create New Project', new_project_path, class: 'btn btn-outline-primary' %>
 		</header>
 
-		<table>
-			<thead>
-				<th width="33%">Id#</th>
-				<th width="33%">Name</th>
-				<th width="20%" class="text-center">Actions</th>
-			</thead>
-
-			<tbody>
-				<% @projects.each do |project| %>
-					<tr>
-						<td><%= project.id %></td>
-						<td><%= project.name %></td>
-						<td class="text-center">
-							<%= link_to 'Edit', edit_project_path(project), class: 'btn' %>
-							<%= link_to 'View', project_path(project), class: 'btn' %>
-						</td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<%= render 'table', projects: @projects %>
 	</section>
 
 	<section>
 		<header>
-			<h5>Other Projects(Task assigned)</h5>
+			<h5>Assigned<small>(tasks)</small>	Projects</h5>
 		</header>
+
+		<%= render 'table', projects: @assigned_projects %>
 	</section>
 </main>

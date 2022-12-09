@@ -1,0 +1,29 @@
+<table>
+	<thead>
+		<th width="10%">Id#</th>
+		<th width="35%">Name</th>
+		<th width="25%">Owner</th>
+		<th width="30%" class="text-center">Actions</th>
+	</thead>
+
+	<tbody>
+		<% projects.each do |project| %>
+			<tr>
+				<td><%= project.id %></td>
+				<td><%= project.name %></td>
+				<td><%= project.user.name %></td>
+
+				<td class="text-center">
+					<% if authorized_to_project? project %>
+						<%= link_to 'Edit', edit_project_path(project), class: 'btn' %>
+					<% end %>
+					<%= link_to 'View', project_path(project), class: 'btn' %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<% if projects.blank? %>
+	<div class="table-empty-state">No record found</div>
+<% end %>
