@@ -1,0 +1,16 @@
+@import 'variables';
+
+.form-wrapper {
+	form {
+		max-width: 500px;
+		width: 90%;
+		.field_with_errors {
+			input {
+				border-color: $danger;
+			}
+		}
+		textarea {
+			min-height: 100px;
+		}
+	}
+}

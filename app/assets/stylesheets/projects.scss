@@ -1,0 +1,29 @@
+.index {
+	display: flex;
+	gap: 2rem;
+	padding: 2rem 0;
+	section {
+		width: 50%;
+		header {
+			width: 100%;
+			margin-bottom: 1rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		table {
+			width: 100%;
+			.text-right {
+				text-align: right;
+			}
+		}
+	}
+}
+
+.show {
+	padding: 2rem 0;
+	&-actions {
+		display: flex;
+		gap: 1rem;
+	}
+}

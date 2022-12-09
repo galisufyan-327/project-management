@@ -1,0 +1,10 @@
+<main class="show">
+	<h5><b>Name:</b>	<%= @project.name %></h5>
+	<p><b>Description:</b>	<%= @project.description %></p>
+	<p><b>Status:</b> <%= @project.status %> </p>
+
+	<div class="show-actions">
+		<%= button_to t('Delete'), project_path(@project), method: :delete, class: 'btn btn-outline-danger' %>
+		<%= button_to t('Archieve'), project_path(@project), params: {project: { status: 'Archieved'}}, method: :put, class: 'btn btn-outline-primary' %>
+	</div>
+</main>

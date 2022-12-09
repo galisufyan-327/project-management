@@ -15,17 +15,18 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Projects</a>
+          <%= link_to 'Projects', projects_path,
+              class: "nav-link #{'active' if current_page?(controller: 'projects')}" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Projects', projects_path, class: 'nav-link'  %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Tasks', tasks_path, class: 'nav-link'  %>
+          <%= link_to 'Tasks', tasks_path,
+              class: "nav-link #{'active' if current_page?(controller: 'tasks')}"  %>
         </li>
       </ul>
+
+      <%= button_to t('logout'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary' %>
     </div>
   </div>
 </nav>
