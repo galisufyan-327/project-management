@@ -106,6 +106,8 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -133,6 +135,9 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
+    minitest-rails (7.0.0)
+      minitest (~> 5.10)
+      railties (~> 7.0.0)
     msgpack (1.6.0)
     net-imap (0.3.1)
       net-protocol
@@ -252,8 +257,10 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  faker
   importmap-rails
   jbuilder
+  minitest-rails
   pg (~> 1.1)
   pry (~> 0.13.1)
   puma (~> 5.0)

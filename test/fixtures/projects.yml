@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+one:
+  name: one
+  description: Project one description
+  status: 0
+  user: one
+
+two:
+  name: two
+  description: Project two description
+  status: 0
+  user: one
+
+three:
+  name: three
+  description: Project three description
+  status: 0
+  user: three

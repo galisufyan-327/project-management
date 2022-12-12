@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+one:
+  title: one
+  description: Task one description
+  status: 0
+  priority: 0
+  project: three
+  assigne: one
+  user: three
+
+two:
+  title: two
+  description: Task two description
+  status: 0
+  priority: 0
+  project: one
+  assigne: one
+  user: one

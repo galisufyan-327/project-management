@@ -1,5 +1,5 @@
 <main class="index">
-	<section>
+	<section class="left">
 		<header>
 			<h5>List of Created Projects</h5>
 
@@ -9,9 +9,9 @@
 		<%= render 'table', projects: @projects %>
 	</section>
 
-	<section>
+	<section class="right">
 		<header>
-			<h5>Assigned<small>(tasks)</small>	Projects</h5>
+			<h5>Assigned<small>(tasks)</small> Projects</h5>
 		</header>
 
 		<%= render 'table', projects: @assigned_projects %>

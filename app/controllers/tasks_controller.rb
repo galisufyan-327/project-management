@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   end
 
   def set_user_projects_tasks
-    @tasks = current_user.all_tasks
+    @tasks = current_user.tasks
     @tasks = @tasks.where(project_id: params[:project_id]) if params[:project_id].present?
   end
 
@@ -56,7 +56,7 @@ class TasksController < ApplicationController
   end
 
   def set_task
-    @task = @tasks.find_by(id: params[:id])
+    @task = current_user.all_tasks.find_by(id: params[:id])
 
     redirect_back(fallback_location: tasks_path, alert: 'Task not found') if @task.blank?
   end
