@@ -22,4 +22,12 @@ class Task < ApplicationRecord
   belongs_to :user
   belongs_to :project
   belongs_to :assigne, class_name: 'User', optional: true
+
+  after_commit :notify_assigne, if: :assigne_previously_changed?
+
+  private
+
+  def notify_assigne
+  	TaskMailer.notify_assigne(self).deliver
+  end
 end
