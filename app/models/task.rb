@@ -28,6 +28,6 @@ class Task < ApplicationRecord
   private
 
   def notify_assigne
-  	TaskMailer.notify_assigne(self).deliver
+  	TaskMailer.notify_assigne(self).deliver_later
   end
 end

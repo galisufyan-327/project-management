@@ -17,3 +17,12 @@ two:
   project: one
   assigne: one
   user: one
+
+three:
+  title: three
+  description: Task three description
+  status: 1
+  priority: 1
+  project: three
+  assigne: one
+  user: three
