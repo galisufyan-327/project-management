@@ -13,12 +13,14 @@
     <p><b>Status:</b> <%= @task.status %> </p>
     <p><b>Priority:</b> <%= @task.priority %> </p>
     <p>
-      <b>Assigned to:</b> <%= @task.assigne&.name %>
+      <b>Assigned to:</b> <%= @task.assignee&.name %>
     </p>
 
     <% if authorized_to_task? @task %>
       <div class="actions">
-        <%= button_to 'Assign to me', task_path(@task), method: :put, params: {task: { assigne_id: current_user.id } }, class: 'btn link-primary' %>
+        <% if @task.assignee.blank? %>
+          <%= button_to 'Assign to me', task_path(@task), method: :put, params: {task: { assignee_id: current_user.id } }, class: 'btn link-primary' %>
+        <% end %>
 
         <%= button_to 'Delete', task_path(@task), method: :delete, class: 'btn btn-outline-danger' %>
       </div>

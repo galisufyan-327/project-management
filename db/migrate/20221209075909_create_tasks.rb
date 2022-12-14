@@ -8,7 +8,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
 
     	t.references :user, index: true
     	t.references :project, index: true
-    	t.references :assigne, index: true, foreign_key: { to_table: :users }
+    	t.references :assignee, index: true, foreign_key: { to_table: :users }
 
       t.timestamps
     end

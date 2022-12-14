@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :projects
   has_many :tasks
 
-  has_many :assigned_tasks, class_name: 'Task', foreign_key: 'assigne_id'
+  has_many :assigned_tasks, class_name: 'Task', foreign_key: 'assignee_id'
   has_many :assigned_projects, through: :assigned_tasks, source: :project
 
   def all_projects

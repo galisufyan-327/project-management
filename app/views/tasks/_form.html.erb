@@ -33,8 +33,8 @@
     </div>
 
     <div class="form-group mt-2">
-      <%= form.label :assigne_id, 'Assignee' %>
-      <%= form.select :assigne_id, User.all.map {|u| [u.name, u.id] }, { include_blank: true}, class: 'form-select' %>
+      <%= form.label :assignee_id, 'Assignee' %>
+      <%= form.select :assignee_id, User.all.map {|u| [u.name, u.id] }, { include_blank: true}, class: 'form-select' %>
     </div>
 
     <%= form.submit 'Save', class: 'btn btn-primary mt-2' %>

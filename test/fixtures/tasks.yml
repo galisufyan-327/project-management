@@ -6,7 +6,7 @@ one:
   status: 0
   priority: 0
   project: three
-  assigne: one
+  assignee: one
   user: three
 
 two:
@@ -15,7 +15,7 @@ two:
   status: 0
   priority: 0
   project: one
-  assigne: one
+  assignee: one
   user: one
 
 three:
@@ -24,5 +24,5 @@ three:
   status: 1
   priority: 1
   project: three
-  assigne: one
+  assignee: one
   user: three

@@ -31,10 +31,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_075909) do
     t.integer "priority", default: 0
     t.bigint "user_id"
     t.bigint "project_id"
-    t.bigint "assigne_id"
+    t.bigint "assignee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["assigne_id"], name: "index_tasks_on_assigne_id"
+    t.index ["assignee_id"], name: "index_tasks_on_assignee_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
@@ -52,5 +52,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_075909) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "tasks", "users", column: "assigne_id"
+  add_foreign_key "tasks", "users", column: "assignee_id"
 end

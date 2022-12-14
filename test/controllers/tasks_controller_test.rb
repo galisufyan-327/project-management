@@ -220,7 +220,7 @@ describe ProjectsController do
         description: 'Task Description',
         status: 'backlog',
         priority: 'low',
-        assigne: User.last
+        assignee: User.last
       }
     }
   end
