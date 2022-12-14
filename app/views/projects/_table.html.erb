@@ -15,9 +15,9 @@
 
         <td class="text-center">
           <% if authorized_to_project? project %>
-            <%= link_to 'Edit', edit_project_path(project), class: 'btn' %>
+            <%= link_to "Edit", edit_project_path(project), class: "btn" %>
           <% end %>
-          <%= link_to 'View', project_path(project), class: 'btn' %>
+          <%= link_to "View", project_path(project), class: "btn" %>
         </td>
       </tr>
     <% end %>

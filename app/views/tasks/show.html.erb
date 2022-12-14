@@ -4,7 +4,7 @@
       <h5>Task Details</h5>
 
       <% if authorized_to_task? @task %>
-        <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-outline-primary' %>
+        <%= link_to "Edit", edit_task_path(@task), class: "btn btn-outline-primary" %>
       <% end %>
     </header>
 
@@ -19,10 +19,10 @@
     <% if authorized_to_task? @task %>
       <div class="actions">
         <% if @task.assignee.blank? %>
-          <%= button_to 'Assign to me', task_path(@task), method: :put, params: {task: { assignee_id: current_user.id } }, class: 'btn link-primary' %>
+          <%= button_to "Assign to me", task_path(@task), method: :put, params: {task: { assignee_id: current_user.id } }, class: "btn link-primary" %>
         <% end %>
 
-        <%= button_to 'Delete', task_path(@task), method: :delete, class: 'btn btn-outline-danger' %>
+        <%= button_to "Delete", task_path(@task), method: :delete, class: "btn btn-outline-danger" %>
       </div>
     <% end %>
   </section>
@@ -31,7 +31,7 @@
     <header>
       <h5>Project</h5>
 
-      <%= link_to 'Visit Project', project_path(@task.project), class: 'btn btn-outline-primary' %>
+      <%= link_to "Visit Project", project_path(@task.project), class: "btn btn-outline-primary" %>
     </header>
 
     <h5><b>Name:</b>  <%= @task.project.name %></h5>

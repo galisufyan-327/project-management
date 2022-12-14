@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <%= link_to 'Project Management', root_path, class: 'navbar-brand' %>
+    <%= link_to "Project Management", root_path, class: "navbar-brand" %>
 
     <button
       class="navbar-toggler"
@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <%= link_to 'Projects', projects_path,
+          <%= link_to "Projects", projects_path,
               class: "nav-link #{'active' if current_page?(controller: 'projects')}" %>
         </li>
         <li class="nav-item">
@@ -26,7 +26,7 @@
         </li>
       </ul>
 
-      <%= button_to t('logout'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary' %>
+      <%= button_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary" %>
     </div>
   </div>
 </nav>

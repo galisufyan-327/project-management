@@ -23,7 +23,7 @@ class Task < ApplicationRecord
 
   belongs_to :user
   belongs_to :project
-  belongs_to :assignee, class_name: 'User', optional: true
+  belongs_to :assignee, class_name: "User", optional: true
 
   after_commit :notify_assignee, if: :assignee_previously_changed?
 
