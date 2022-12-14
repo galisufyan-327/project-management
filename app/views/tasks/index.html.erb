@@ -1,19 +1,19 @@
 <main class="index">
-	<section class="left">
-		<header>
-			<h5>List of Tasks in my Projects</h5>
-		</header>
+  <section class="left">
+    <header>
+      <h5>List of Tasks in my Projects</h5>
+    </header>
 
-		<%= render 'table', tasks: @tasks %>
-	</section>
+    <%= render 'table', tasks: @tasks %>
+  </section>
 
-	<hr>
+  <hr>
 
-	<section class="right">
-		<header>
-			<h5>Assigned Tasks</h5>
-		</header>
+  <section class="right">
+    <header>
+      <h5>Assigned Tasks</h5>
+    </header>
 
-		<%= render 'table', tasks: @assigned_tasks %>
-	</section>
+    <%= render 'table', tasks: @assigned_tasks %>
+  </section>
 </main>

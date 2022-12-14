@@ -1,19 +1,19 @@
 <main class="index">
-	<section class="left">
-		<header>
-			<h5>List of Created Projects</h5>
+  <section class="left">
+    <header>
+      <h5>List of Created Projects</h5>
 
-			<%= link_to 'Create New Project', new_project_path, class: 'btn btn-outline-primary' %>
-		</header>
+      <%= link_to 'Create New Project', new_project_path, class: 'btn btn-outline-primary' %>
+    </header>
 
-		<%= render 'table', projects: @projects %>
-	</section>
+    <%= render 'table', projects: @projects %>
+  </section>
 
-	<section class="right">
-		<header>
-			<h5>Assigned<small>(tasks)</small> Projects</h5>
-		</header>
+  <section class="right">
+    <header>
+      <h5>Assigned<small>(tasks)</small> Projects</h5>
+    </header>
 
-		<%= render 'table', projects: @assigned_projects %>
-	</section>
+    <%= render 'table', projects: @assigned_projects %>
+  </section>
 </main>

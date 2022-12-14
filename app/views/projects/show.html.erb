@@ -1,36 +1,36 @@
 <% authorized = authorized_to_project? @project %>
 
 <main class="index">
-	<section>
-		<header>
-			<h5>Project Details</h5>
+  <section>
+    <header>
+      <h5>Project Details</h5>
 
-			<% if authorized %>
-				<%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-outline-primary' %>
-			<% end %>
-		</header>
+      <% if authorized %>
+        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-outline-primary' %>
+      <% end %>
+    </header>
 
-		<h5><b>Name:</b>	<%= @project.name %></h5>
-		<p><b>Description:</b>	<%= @project.description %></p>
-		<p><b>Status:</b> <%= @project.status %> </p>
+    <h5><b>Name:</b>  <%= @project.name %></h5>
+    <p><b>Description:</b>  <%= @project.description %></p>
+    <p><b>Status:</b> <%= @project.status %> </p>
 
-		<% if authorized %>
-			<div class="actions">
-				<%= button_to 'Delete', project_path(@project), method: :delete, class: 'btn btn-outline-danger' %>
-				<%= button_to 'Archieve', project_path(@project), params: {project: { status: 'archieved'}}, method: :put, class: 'btn btn-outline-primary' %>
-			</div>
-			<% end %>
-	</section>
+    <% if authorized %>
+      <div class="actions">
+        <%= button_to 'Delete', project_path(@project), method: :delete, class: 'btn btn-outline-danger' %>
+        <%= button_to 'Archieve', project_path(@project), params: {project: { status: 'archieved'}}, method: :put, class: 'btn btn-outline-primary' %>
+      </div>
+      <% end %>
+  </section>
 
-	<section>
-		<header>
-			<h5>List of Tasks in this Project</h5>
+  <section>
+    <header>
+      <h5>List of Tasks in this Project</h5>
 
-			<% if authorized %>
-				<%= link_to 'Create New Task', new_project_task_path(@project), class: 'btn btn-outline-primary' %>
-			<% end %>
-		</header>
+      <% if authorized %>
+        <%= link_to 'Create New Task', new_project_task_path(@project), class: 'btn btn-outline-primary' %>
+      <% end %>
+    </header>
 
-		<%= render 'tasks/table', tasks: @project.tasks %>
-	</section>
+    <%= render 'tasks/table', tasks: @project.tasks %>
+  </section>
 </main>

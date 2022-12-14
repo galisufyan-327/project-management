@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 class Task < ApplicationRecord
   validates :title, presence: true, uniqueness: { scope: :project_id }
 
   enum priority: {
-  	null:    0,
-  	low:     1,
-  	medium:  2,
-  	high:    3,
-  	highest: 4
+    null:    0,
+    low:     1,
+    medium:  2,
+    high:    3,
+    highest: 4
   }
 
   enum status: {
-  	backlog:     0,
-  	to_do:       1,
-  	in_progress: 2,
-  	in_review:   3,
-  	done:        4
+    backlog:     0,
+    to_do:       1,
+    in_progress: 2,
+    in_review:   3,
+    done:        4
   }
 
   has_many :tasks
@@ -28,6 +30,6 @@ class Task < ApplicationRecord
   private
 
   def notify_assigne
-  	TaskMailer.notify_assigne(self).deliver_later
+    TaskMailer.notify_assigne(self).deliver_later
   end
 end

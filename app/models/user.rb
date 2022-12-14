@@ -1,6 +1,6 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -13,10 +13,10 @@ class User < ApplicationRecord
   has_many :assigned_projects, through: :assigned_tasks, source: :project
 
   def all_projects
-  	Project.where(id: [projects + assigned_projects])
+    Project.where(id: [projects + assigned_projects])
   end
 
   def all_tasks
-  	tasks.or(assigned_tasks)
+    tasks.or(assigned_tasks)
   end
 end
